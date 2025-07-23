@@ -1,7 +1,7 @@
  async function weather(){
-        cityname=document.getElementById("in").value;
-            APIkey='5fc84481d6f2b6865126e89d7219c125';
-            targeturl=`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`;
+       let cityname=document.getElementById("in").value;
+           let APIkey='5fc84481d6f2b6865126e89d7219c125';
+           let targeturl=`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`;
             try{
                 const response=await fetch(targeturl);
                 const a=await response.json();
@@ -12,7 +12,7 @@
                     document.getElementById('2').innerHTML=`Temperature : ${(a.main.temp-273.14).toFixed(2)}°C`;
                     document.getElementById('3').innerHTML=`Humidity : ${a.main.humidity}`;
                 }
-                 b=a.weather[0].main
+                let b=a.weather[0].main
                 // b="Rain"
                 
                 switch(b){
